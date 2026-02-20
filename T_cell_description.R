@@ -19,7 +19,7 @@ for (j in 1:length(cells)){
 	KEGG_Enrichment_Analy(one_gene_list,cells[j],290+j,"NRP")
 }
 
-Re_All_1_Data.markers <- read.csv("_1分好_Re_All_Data_markers.csv",row.names=1)
+Re_All_1_Data.markers <- read.csv("Re_All_Data_markers.csv",row.names=1)
 Re_All_1_top20genes <- Re_All_1_Data.markers %>% group_by(cluster) %>% top_n(n=20, wt=avg_log2FC)
 
 cells <- c("B cells","CD4 T cells")
