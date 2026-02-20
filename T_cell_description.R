@@ -1,6 +1,6 @@
 # Since in the comparison between R and NR groups, T cells showed a specific phenomenon in the NR group. This paper considers this cell to be a specific cell subpopulation in the non-responder patient group.
 # We perform functional enrichment analysis on this cell
-NoR_All_1_Data.markers <- read.csv("_1分好_NoR_All_Data_markers.csv",row.names=1)
+NoR_All_1_Data.markers <- read.csv("NoR_All_Data_markers.csv",row.names=1)
 NoR_All_1_top10genes <- NoR_All_1_Data.markers %>% group_by(cluster) %>% top_n(n=10, wt=avg_log2FC)
 T_top9genes <- NoR_All_1_top10genes[NoR_All_1_top10genes$cluster=="T cells",]$gene[1:9]
 # Still using those two functions GO_Enrichment_Analy, KEGG_Enrichment_Analy
